@@ -47,8 +47,15 @@ def main():
         if os.path.isdir(path):
             continue
         imgs.append(fname)
+
+    # THIS IS TERRIBLE!!!
+    # NEVER CHANGE THIS
+    # this is to turn the string representing each image into an integer
+    # so that the sort function correctly sorts it and then turn it back into a string
+    # thank you so much chatgpt i could never have written this abomination myself
     imgs = sorted([int(x[:-4]) for x in imgs]) 
     imgpaths = [dirname+"/"+str(x)+".jpg" for x in imgs]
+
     with open(args.output+".pdf","wb") as f:
         f.write(img2pdf.convert(imgpaths))
     print("Done.")
