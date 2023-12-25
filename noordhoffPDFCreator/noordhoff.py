@@ -55,6 +55,7 @@ def main():
     # thank you so much chatgpt i could never have written this abomination myself
     imgs = sorted([int(x[:-4]) for x in imgs]) 
     imgpaths = [dirname+"/"+str(x)+".jpg" for x in imgs]
+    # 🤮🤮🤮🤮
 
     with open(args.output+".pdf","wb") as f:
         f.write(img2pdf.convert(imgpaths))
